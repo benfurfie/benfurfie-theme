@@ -1,0 +1,80 @@
+$base-colors: (
+    black: #000,
+    white: #fff,
+    alto: #d8d8d8,
+    tundora: #4a4a4a,
+    dusty: #9b9b9b,
+    mineshaft: #333333,
+    roof-terracotta: #ab1e22,
+);
+
+$colors: (
+    brand: (
+        light: lookup($base-colors, white),
+        light-gray: lookup($base-colors, alto),
+        gray: lookup($base-colors, tundora),
+        dark-gray: lookup($base-colors, mineshaft),
+        red: lookup($base-colors, roof-terracotta),
+        dark: lookup($base-colors, black),
+    ),
+);
+
+$sizes: (
+    spacing: (
+        xxs: 4px,
+        xs: 8px,
+        sm: 16px,
+        md: 24px,
+        lg: 32px,
+        xl: 40px,
+        xxl: 60px,
+    ),
+    width: (
+        max-width: 1100px,
+        max-spacing: 1164px,
+    )
+);
+
+$breakpoint: (
+    min: 320px,
+    xsmall: 400px,
+    small: 550px,
+    medium: 768px,
+    large: 1024px,
+    xlarge: 1440px,
+    max: 1920px,
+);
+
+$typography: (
+    family: (
+
+    ),
+    button: (
+
+    ),
+    title: (
+        size: (
+            peep: 14px,
+            whisper: 16px,
+            talk: 24px,
+            shout: 32px,
+        ),
+    ),
+    paragraph: (
+        size: (
+            whisper: 14px,
+            talk: 16px,
+            shout: 24px,
+        ),
+    ),
+    weight: (
+        light: 300,
+        normal: 400,
+        medium: 600,
+        bold: 800,
+    ),
+);
+
+$animation: (
+    transition: all 150ms ease-in-out,
+)

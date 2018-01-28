@@ -1,0 +1,43 @@
+// Adds a clearfix to all floated child elements.
+@mixin clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+// Applies a max-width to the element.
+// Set to 1380px by default.
+// Also adds padding to the element on screen sizes smaller than the max-width to prevent content jutting up against the edges.
+@mixin container($local-max-width: lookup($sizes, width max-width)) {
+    @include clearfix;
+    margin: {
+        left: auto;
+        right: auto;
+    }
+    max-width: $local-max-width;
+    @media screen and (max-width: 1500px) {
+        padding: {
+            left: lookup($sizes, spacing md);
+            right: lookup($sizes, spacing md);
+        }
+    }
+}
+
+// Allows you to quickly and easily call @media queries into the Sass file.
+// Has two arguments; one required, one optional.
+// First argument – $bp – is the breakpoint value. It is a sass map value within the map $breakpoint.
+// For example, if you wanted to call a medium media query, you would simply write:
+//     `@include breakpoint(medium) {
+//        ...
+//    }`
+// The second argument allows you to override the default mobile-first value of min-width. Expanding on the previous example, if you wanted to call a max-width of medium, you would simply write:
+//     `@include breakpoint(medium, max-width) {
+//        ...
+//    }`
+@mixin breakpoint($bp, $minmax: 'min-width') {
+    @media screen and ($minmax: lookup($breakpoint, $bp)) {
+        @content;
+    }
+}

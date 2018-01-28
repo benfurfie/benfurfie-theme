@@ -1,0 +1,12 @@
+// Lookup takes two arguments. The map and the path.
+// Maps are stored in ./settings
+// Path is the path from the map root to the value that we're wanting to acccess.
+// An example of this might be with buttons. We want to access the relevant height of a button. We would access the $sizes map. We would then add the path to the height, and then buttons.
+
+@function lookup($map, $path) {
+    $current: $map;
+    @each $key in $path {
+        $current: map-get($current, $key);
+    }
+    @return $current;
+}
