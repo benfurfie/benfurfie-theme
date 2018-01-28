@@ -4,7 +4,9 @@
         {% include 'head.twig' %}
     {% endblock %}
     {% block body %}
-        Content
+        {% block header %}
+            {% include 'header.twig' %}
+        {% endblock %}
     {% endblock %}
     {% block footer %}
         {% include 'footer.twig' %}
